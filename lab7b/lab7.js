@@ -21,7 +21,7 @@ const  employeesData=function(empCollection){
 
         const email=empCollection.results[0].email;
            document.getElementById("email1").innerText=email;
-           ////////
+         
 
         const empImg1=empCollection.results[1].picture.medium;
      document.getElementById("img2").src=empImg1;
@@ -45,7 +45,7 @@ const  employeesData=function(empCollection){
         const email2=empCollection.results[2].email;
            document.getElementById("email3").innerText=email2;
 
-           //
+           
 
            const empImg3=empCollection.results[3].picture.medium;
            document.getElementById("img4").src=empImg3;
