@@ -33,7 +33,7 @@ const  employeesData=function(empCollection){
         const email1=empCollection.results[1].email;
            document.getElementById("email2").innerText=email1;
            
-            //
+            
 
             const empImg2=empCollection.results[2].picture.medium;
      document.getElementById("img3").src=empImg2;
@@ -50,7 +50,7 @@ const  employeesData=function(empCollection){
            const empImg3=empCollection.results[3].picture.medium;
            document.getElementById("img4").src=empImg3;
            const empfName3=empCollection.results[3].name.first+" "+empCollection.results[3].name.last;
-             let bold= document.getElementById("emp4").innerText=empfName3;
+             document.getElementById("emp4").innerText=empfName3;
              const phone3=empCollection.results[3].phone;
                 document.getElementById("phone4").innerText= "Phone : "+ phone3;
       
