@@ -1,5 +1,4 @@
 window.onload = function () {
-
     let maindiv= document.getElementById("employee");
     const button=document.getElementById("button");
 
@@ -8,20 +7,20 @@ window.onload = function () {
         const input =document.getElementById("input");
         if (input.value <=0) throw new Error("please put posetive number");
 
-        const postObservable = rxjs.from(fetch(`https://randomuser.me/api/?results=${input.value}`)
-            .then(resolve => resolve.json()))
+        const rxIsObservable = rxjs.from(fetch(`https://randomuser.me/api/?results=${input.value}`)
+            .then(resolve => resolve.json()));
        
 
-        postObservable.subscribe(post => {
-            
+        rxIsObservable.subscribe(post => {
+
 
             for (let i = 0; i < post.results.length; i++) {
 
                 let fullName = document.createElement("div");
                 maindiv.appendChild(fullName);
-                let firstName1 = post.results[i].name.first;
-                let lastName1 = post.results[i].name.last;
-                fullName.innerHTML =  firstName1 + " " + lastName1;
+                let firstName = post.results[i].name.first;
+                let lastName = post.results[i].name.last;
+                fullName.innerHTML =  firstName + " " + lastName;
                 let coltwo = document.createElement("div");
                  maindiv.appendChild(coltwo);
                 let header = document.createElement("p");
@@ -40,7 +39,7 @@ window.onload = function () {
                 let locatState = document.createElement("p");
                 let address = post.results[i].location.city + " " + post.results[i].location.state + " " +
                     post.results[i].location.country + " " + post.results[i].location.postcode;
-                locatState.innerHTML = address;
+                   locatState.innerHTML = address;
                    locatState.style.marginLeft="60%";
                 coltwo.appendChild(locatState);
 
