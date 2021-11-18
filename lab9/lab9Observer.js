@@ -1,30 +1,25 @@
 
 
 class Subject {
-   events={ eat:[],
-           study:[]
-           }
-    on(event,fn){
-        if(this.events.eat===event){
-            this.events.eat.push(fn);
-          }
-        else if(this.events.study===event){
-            this.events.study.push(fn);
-          }
-         }
-
-    emit(event,message){
-        if(this.events.eat==event){
-            this.events.eat.forEach(msg=>console.log(msg));
-            ;
-        }
-
-        else if(this.events.study===event){
-            this.events.study.forEach(msg=>console.log(msg));
-        }
-        
+   
+    observers={};
+   
+    
+   on(event ,fn){
+     if(this.observers[event]){
+           this.observers[event].push(fn);
+     }else{
+        this.observers[event]=fn;
+     } 
+    }
+ emit(event,message){
+     if(this.observers[event]){
+         this.observers[event].forEach(fn =>fn(message));
      }
-     
+     }
+     off(event,fn){
+         this.observers[event]=this.observers[event].filter(ob=>ob!==fn);
+     }
     }
 
  const subject = new Subject();

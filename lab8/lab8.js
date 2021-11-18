@@ -5,7 +5,10 @@ window.onload = function () {
     button.onclick = function displayEmployees() {
 
         const input =document.getElementById("input");
-        if (input.value <=0) throw new Error("please put posetive number");
+        if (input.value<=0){
+            alert(new Error("please put posetive number"));
+          }
+           else {
 
         const rxIsObservable = rxjs.from(fetch(`https://randomuser.me/api/?results=${input.value}`)
             .then(resolve => resolve.json()));
@@ -46,5 +49,6 @@ window.onload = function () {
             }
         })
     }
+}
 }
 

@@ -1,0 +1,46 @@
+td * {
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    border-style: solid;
+    border-color: rgb(red, green, blue);
+    background-color: black;
+    color: aliceblue;
+    width: 10%;
+}
+
+td {
+    border: 2px solid grey;
+    padding: 8px;
+
+}
+
+#btn {
+
+    border-radius: 20px;
+    margin-left: 80%;
+    margin-bottom: -13%;
+    width: 150px;
+    height: 50px;
+    color: black;
+    font-weight: 800;
+    text-align: center;
+    background-color: rgb(47, 255, 116);
+}
+
+#book {
+    font-size: xx-large;
+
+    margin-bottom: 10px;
+    padding-left: 40px;
+
+}
+
+#middle {
+    margin-right: 10%;
+    padding-top: 10px;
+    font-weight: 600;
+    position: relative;
+}
